@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -54,6 +54,13 @@
         <widget class="QPushButton" name="btnHypo">
          <property name="text">
           <string>Hypo Cicloid</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnLine">
+         <property name="text">
+          <string>Line</string>
          </property>
         </widget>
        </item>

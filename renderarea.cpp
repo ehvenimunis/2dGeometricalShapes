@@ -44,8 +44,10 @@ void RenderArea::on_shape_changed(){
         mIntervalLenght = 2 * M_PI;
         mStepCount = 256;
         break;
-    case FutureCurve:
-
+    case Line:
+        mIntervalLenght = 1;
+        mScale = 50;
+        mStepCount = 128;
         break;
     default:
         //mBackgroundColor = Qt::black;
@@ -66,8 +68,8 @@ QPointF RenderArea::compute(float t){
     case Hypocycloid:
         return compute_hypo(t);
         break;
-    case FutureCurve:
-        return compute_future_curve(t);
+    case Line:
+        return compute_line(t);
         break;
     default:
         //mBackgroundColor = Qt::black;
@@ -103,8 +105,8 @@ QPointF RenderArea::compute_hypo(float t){
                 1.5 * (2* sin(t) - sin(2 * t))
     );
 }
-QPointF RenderArea::compute_future_curve (float t){
-
+QPointF RenderArea::compute_line (float t){
+    return QPointF (1 - t, 1 - t);
 }
 void RenderArea::paintEvent(QPaintEvent *event)
 {
